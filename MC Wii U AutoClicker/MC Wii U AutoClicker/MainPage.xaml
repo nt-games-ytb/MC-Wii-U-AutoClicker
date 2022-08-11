@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MC_Wii_U_AutoClicker.MainPage">
     <ScrollView>
-        <StackLayout>
+        <StackLayout >
             <Frame BackgroundColor="Firebrick" Padding="5" CornerRadius="0">
                 <StackLayout>
                     <Label Text="Minecraft Wii U" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
@@ -17,9 +17,12 @@
                 <Button Grid.Row="0" Grid.Column="0" Text="Connect" Margin="30,0,0,0"/>
                 <Button Grid.Row="0" Grid.Column="1" Text="Disonnect" Margin="0,0,30,0"/>
             </Grid>
-            
-            
-            
+
+            <Grid ColumnDefinitions="1*, 1*" RowDefinitions="1*, Auto">
+                <Button Grid.Row="0" Grid.Column="0" Text="Auto Click ZL [OFF]" Margin="30,0,0,0" TextColor="Red"/>
+                <Button Grid.Row="0" Grid.Column="1" Text="Auto Click ZR [OFF]" Margin="0,0,30,0" TextColor="Red"/>
+            </Grid>
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

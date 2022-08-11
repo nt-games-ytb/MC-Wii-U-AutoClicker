@@ -17,6 +17,7 @@ namespace MC_Wii_U_AutoClicker.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 178, 34, 34));//Set notification bar in FireBrick color #FFB22222
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
