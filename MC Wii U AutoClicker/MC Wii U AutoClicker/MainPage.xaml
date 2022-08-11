@@ -18,17 +18,8 @@
                 <Button Grid.Row="0" Grid.Column="1" Text="Disonnect" Margin="0,0,30,0"/>
             </Grid>
             
-            <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-            <Label FontSize="16" Padding="30,24,30,0">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <FormattedString.Spans>
-                            <Span Text="Learn more at "/>
-                            <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                        </FormattedString.Spans>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>
