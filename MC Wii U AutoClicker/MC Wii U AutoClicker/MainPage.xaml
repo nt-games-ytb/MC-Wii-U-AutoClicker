@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MC_Wii_U_AutoClicker.MainPage">
-    <ScrollView>
+    <ScrollView >
         <StackLayout >
             <Frame BackgroundColor="Firebrick" Padding="5" CornerRadius="0">
                 <StackLayout>
@@ -11,18 +11,64 @@
                 </StackLayout>
             </Frame>
 
-            <Label Text="Connection : " FontSize="20" Padding="30,20,30,0" Margin="0,0,0,0"/>
+            <Label Text="Connection :" TextColor="White" FontSize="20" Padding="30,20,30,0" Margin="0,0,0,0"/>
             <Entry Placeholder="Your Wii U IP address" Text="192.168." BackgroundColor="#0F0F0F" Margin="30,0,30,0"/>
-            <Grid ColumnDefinitions="1*, 1*" RowDefinitions="1*, Auto">
+            <Grid>
+                <!-- ColumnDefinitions="1*, 1*" RowDefinitions="1*, Auto" -->
                 <Button Grid.Row="0" Grid.Column="0" Text="Connect" Margin="30,0,0,0"/>
-                <Button Grid.Row="0" Grid.Column="1" Text="Disonnect" Margin="0,0,30,0"/>
+                <Button Grid.Row="0" Grid.Column="1" Text="Disconnect" Margin="0,0,30,0"/>
             </Grid>
 
-            <Grid ColumnDefinitions="1*, 1*" RowDefinitions="1*, Auto">
-                <Button Grid.Row="0" Grid.Column="0" Text="Auto Click ZL [OFF]" Margin="30,0,0,0" TextColor="Red"/>
-                <Button Grid.Row="0" Grid.Column="1" Text="Auto Click ZR [OFF]" Margin="0,0,30,0" TextColor="Red"/>
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" Text="Auto Click ZL :" TextColor="White" FontSize="20" Margin="30,0,0,0"/>
+                <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" Text="Auto Click ZR :" TextColor="White" FontSize="20" Margin="0,0,30,0" />
             </Grid>
 
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" Text="Time between clicks : " TextColor="White" FontSize="Micro" Margin="30,0,0,0"/>
+                <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" Text="Time between clicks : " TextColor="White" FontSize="Micro" Margin="0,0,30,0"/>
+            </Grid>
+            
+            <Grid>
+                <Stepper Grid.Row="0" Grid.Column="0" Minimum="1" Maximum="10000" Increment="1" Value="1" Margin="30,0,0,0"/>
+                <Stepper Grid.Row="0" Grid.Column="1" Minimum="1" Maximum="10000" Increment="1" Value="1" Margin="0,0,30,0"/>
+            </Grid>
+
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="0" Text="Only in front of an entity :" TextColor="White" FontSize="Micro" Margin="30,0,0,0"/>
+                <Switch Grid.Row="0" Grid.Column="1" Margin="30,0,0,0"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Only in front of an entity :" TextColor="White" FontSize="Micro" Margin="0,0,0,0" Padding="0,0,30,0"/>
+                <Switch Grid.Row="0" Grid.Column="3" Margin="0,0,30,0"/>
+            </Grid>
+            
+            <Grid>
+                <Button Grid.Row="0" Grid.Column="0" Text="OFF" Margin="30,0,0,0" TextColor="Red" HeightRequest="200" FontSize="20"/>
+                <Button Grid.Row="0" Grid.Column="1" Text="OFF" Margin="0,0,30,0" TextColor="Red" HeightRequest="200" FontSize="20"/>
+            </Grid>
+            
+            <Label Text="Other :" TextColor="White" FontSize="20" Margin="30,0,30,0"/>
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="0" Text="Toggle Sprint :" TextColor="White" FontSize="Micro" Margin="30,0,0,0"/>
+                <Switch Grid.Row="0" Grid.Column="1" Margin="0,0,30,0"/>
+            </Grid>
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="0" Text="Show Armor :" TextColor="White" FontSize="Micro" Margin="30,0,0,0"/>
+                <Switch Grid.Row="0" Grid.Column="1" Margin="0,0,30,0"/>
+            </Grid>
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="0" Text="Show hitbox :" TextColor="White" FontSize="Micro" Margin="30,0,0,0"/>
+                <Switch Grid.Row="0" Grid.Column="1" Margin="0,0,30,0"/>
+            </Grid>
+
+            <Label Text="Macro  :" TextColor="White" FontSize="Micro" Margin="30,0,30,0"/>
+            <Slider Margin="30,0,30,0"/>
+            <Label Text="Hitbox Size :" TextColor="White" FontSize="Micro" Margin="30,0,30,0"/>
+            <Slider Margin="30,0,30,0"/>
+
+            <Label Text="Credits :" TextColor="White" FontSize="20" Margin="30,0,30,0"/>
+            <Label Text="This software was made by nt games," FontSize="Micro" HorizontalTextAlignment="Center"/>
+            <Label Text="with the idea of SovietHorizon and" FontSize="Micro" HorizontalTextAlignment="Center"/>
+            <Label Text="with GeckoU by the WiiPlaza." FontSize="Micro" HorizontalTextAlignment="Center"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
