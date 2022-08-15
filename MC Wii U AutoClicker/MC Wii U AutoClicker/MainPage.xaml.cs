@@ -19,8 +19,15 @@ namespace MC_Wii_U_AutoClicker
         public MainPage()
         {
             InitializeComponent();
+
             labelTimeBetweenClickZL.Text = TimeBetweenClick + timeBetweenClickZL.Value * 0.05 + " s";
             labelTimeBetweenClickZR.Text = TimeBetweenClick + timeBetweenClickZR.Value * 0.05 + " s";
+
+            ipText.Text = Preferences.Get("IP", "192.168.");
+            timeBetweenClickZL.Value = Preferences.Get("timeBetweenClickZL", 0.0);
+            timeBetweenClickZR.Value = Preferences.Get("timeBetweenClickZR", 0.0);
+            frontOfAnEntityZL.IsEnabled = Preferences.Get("frontOfAnEntityZL", false);
+            frontOfAnEntityZR.IsEnabled = Preferences.Get("frontOfAnEntityZR", false);
         }
 
         public static GeckoUCore GeckoU;
@@ -73,6 +80,8 @@ namespace MC_Wii_U_AutoClicker
             {
                 GeckoU = new GeckoUCore(ipText.Text);
                 GeckoU.GUC.Connect();
+
+                Preferences.Set("IP", ipText.Text);
 
                 GetNintendoNetwork();
                 await DisplayAlert("Minecraft Wii U AutoClicker", "Welcome " + nintendoNetwork.Replace("/0", "") + ",\r\nyou are well connected to Minecraft Wii U AutoClicker !", "OK");
@@ -178,18 +187,24 @@ namespace MC_Wii_U_AutoClicker
         private void timeBetweenClickZL_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             labelTimeBetweenClickZL.Text = TimeBetweenClick + timeBetweenClickZL.Value * 0.05 + " s";
+            Preferences.Set("timeBetweenClickZL", timeBetweenClickZL.Value);
         }
 
         private void timeBetweenClickZR_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             labelTimeBetweenClickZR.Text = TimeBetweenClick + timeBetweenClickZR.Value * 0.05 + " s";
+            Preferences.Set("timeBetweenClickZR", timeBetweenClickZR.Value);
         }
 
         private void frontOfAnEntityZL_Toggled(object sender, ToggledEventArgs e)
-        { }
+        {
+            Preferences.Set("frontOfAnEntityZL", frontOfAnEntityZL.IsEnabled);
+        }
 
         private void frontOfAnEntityZR_Toggled(object sender, ToggledEventArgs e)
-        { }
+        {
+            Preferences.Set("frontOfAnEntityZR", frontOfAnEntityZR.IsEnabled);
+        }
 
         private void autoClickZL_Clicked(object sender, EventArgs e)
         {
@@ -203,7 +218,11 @@ namespace MC_Wii_U_AutoClicker
             }
             else
             {
-                autoClickZLThread.Abort();
+                try
+                {
+                    autoClickZLThread.Abort();
+                }
+                catch { }
                 autoClickZL.Text = "OFF";
                 autoClickZL.TextColor = Color.Red;
                 autoClickZR.IsEnabled = true;
@@ -247,7 +266,11 @@ namespace MC_Wii_U_AutoClicker
             }
             else
             {
-                autoClickZRThread.Abort();
+                try
+                {
+                    autoClickZRThread.Abort();
+                }
+                catch { }
                 autoClickZR.Text = "OFF";
                 autoClickZR.TextColor = Color.Red;
                 autoClickZL.IsEnabled = true;

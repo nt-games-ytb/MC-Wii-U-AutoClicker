@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MC_Wii_U_AutoClicker.MainPage">
-    <ScrollView >
-        <StackLayout >
+    <ScrollView>
+        <StackLayout BackgroundColor="#303030">
             <Frame BackgroundColor="Firebrick" Padding="5" CornerRadius="0">
                 <StackLayout>
                     <Label Text="Minecraft Wii U" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
@@ -12,7 +12,7 @@
             </Frame>
 
             <Label Text="Connection :" TextColor="White" FontSize="20" Padding="30,20,30,0" Margin="0,0,0,0"/>
-            <Entry Placeholder="Your Wii U IP address" Text="192.168." BackgroundColor="#0F0F0F" Margin="30,0,30,0" MaxLength="16" x:Name="ipText" TextChanged="ipText_TextChanged" IsEnabled="True"/>
+            <Entry Placeholder="Your Wii U IP address" Text="192.168." TextColor="White" BackgroundColor="#0F0F0F" Margin="30,0,30,0" MaxLength="16" x:Name="ipText" TextChanged="ipText_TextChanged" IsEnabled="True"/>
             <Grid>
                 <!-- ColumnDefinitions="1*, 1*" RowDefinitions="1*, Auto" -->
                 <Button Grid.Row="0" Grid.Column="0" Text="Connect" Margin="30,0,0,0" x:Name="connect" Clicked="connect_Clicked" IsEnabled="False"/>
