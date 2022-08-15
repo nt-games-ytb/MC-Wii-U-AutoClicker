@@ -1,6 +1,5 @@
 # What is this ?
-This is the code of Discord to Minecraft Wii U, a RTM tool for synchronise Discord chat to Minecraft Wii U chat.    
-I made a video to illustrate this : https://youtube.com/shorts/MXy0h7w4_OI.
+This is the code of MC Wii U AutoClicker, a RTM (Real Time to Modding) tool to cheat in Minecraft Wii U PvP undetectable.      
 
 # How do I compile ? 
 You can compile this with [Microsoft Visual Studio](https://visualstudio.microsoft.com/) or with other development software in C#.
