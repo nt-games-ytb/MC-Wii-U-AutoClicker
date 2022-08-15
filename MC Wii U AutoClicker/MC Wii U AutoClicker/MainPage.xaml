@@ -30,8 +30,8 @@
             </Grid>
             
             <Grid>
-                <Stepper Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="60000" Increment="1" Value="0" Margin="30,0,0,0" x:Name="timeBetweenClickZL" ValueChanged="timeBetweenClickZL_ValueChanged"/>
-                <Stepper Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="60000" Increment="1" Value="0" Margin="0,0,30,0" x:Name="timeBetweenClickZR" ValueChanged="timeBetweenClickZR_ValueChanged"/>
+                <Stepper Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="60000" Increment="1" Value="1" Margin="30,0,0,0" x:Name="timeBetweenClickZL" ValueChanged="timeBetweenClickZL_ValueChanged"/>
+                <Stepper Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="60000" Increment="1" Value="1" Margin="0,0,30,0" x:Name="timeBetweenClickZR" ValueChanged="timeBetweenClickZR_ValueChanged"/>
             </Grid>
 
             <Grid>

@@ -24,8 +24,8 @@ namespace MC_Wii_U_AutoClicker
             labelTimeBetweenClickZR.Text = TimeBetweenClick + timeBetweenClickZR.Value * 0.05 + " s";
 
             ipText.Text = Preferences.Get("IP", "192.168.");
-            timeBetweenClickZL.Value = Preferences.Get("timeBetweenClickZL", 0.0);
-            timeBetweenClickZR.Value = Preferences.Get("timeBetweenClickZR", 0.0);
+            timeBetweenClickZL.Value = Preferences.Get("timeBetweenClickZL", 1.0);
+            timeBetweenClickZR.Value = Preferences.Get("timeBetweenClickZR", 1.0);
             frontOfAnEntityZL.IsEnabled = Preferences.Get("frontOfAnEntityZL", false);
             frontOfAnEntityZR.IsEnabled = Preferences.Get("frontOfAnEntityZR", false);
         }
