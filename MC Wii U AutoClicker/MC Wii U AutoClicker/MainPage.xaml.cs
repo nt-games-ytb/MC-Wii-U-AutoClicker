@@ -26,8 +26,8 @@ namespace MC_Wii_U_AutoClicker
             ipText.Text = Preferences.Get("IP", "192.168.");
             timeBetweenClickZL.Value = Preferences.Get("timeBetweenClickZL", 1.0);
             timeBetweenClickZR.Value = Preferences.Get("timeBetweenClickZR", 1.0);
-            frontOfAnEntityZL.IsEnabled = Preferences.Get("frontOfAnEntityZL", false);
-            frontOfAnEntityZR.IsEnabled = Preferences.Get("frontOfAnEntityZR", false);
+            frontOfAnEntityZL.IsToggled = Preferences.Get("frontOfAnEntityZL", false);
+            frontOfAnEntityZR.IsToggled = Preferences.Get("frontOfAnEntityZR", false);
         }
 
         public static GeckoUCore GeckoU;
@@ -198,12 +198,12 @@ namespace MC_Wii_U_AutoClicker
 
         private void frontOfAnEntityZL_Toggled(object sender, ToggledEventArgs e)
         {
-            Preferences.Set("frontOfAnEntityZL", frontOfAnEntityZL.IsEnabled);
+            Preferences.Set("frontOfAnEntityZL", frontOfAnEntityZL.IsToggled);
         }
 
         private void frontOfAnEntityZR_Toggled(object sender, ToggledEventArgs e)
         {
-            Preferences.Set("frontOfAnEntityZR", frontOfAnEntityZR.IsEnabled);
+            Preferences.Set("frontOfAnEntityZR", frontOfAnEntityZR.IsToggled);
         }
 
         private void autoClickZL_Clicked(object sender, EventArgs e)
